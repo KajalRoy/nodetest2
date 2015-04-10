@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	h1=heading
+	br
+	img(class='profile-img', src='https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120')
+	div
+	form(action='/login',method='POST')
+		fieldset
+			input(id='email',type='text',value='',placeholder='UserName',name='username')
+			input(id='password',type='password',value='',placeholder='Password',name='password')
+			| &nbsp
+			input(type='submit',value='Sign Up',data-transition='fade', data-theme='c')
+		span.clearfix
+	br
+	a(href='/signup', class='text-center new-account') Create an account
+	#message
+		if message
+			h1 #{message}

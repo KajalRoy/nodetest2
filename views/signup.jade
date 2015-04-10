@@ -1,0 +1,29 @@
+extends layout
+
+block content
+	h1= title
+
+	// WRAPPER
+	#wrapper
+
+		// ADD USER
+		h2 Sign Up to our Database
+			#addUser
+				fieldset
+					input#inputUserName(type='text', placeholder='Username')
+					input#inputUserEmail(type='text', placeholder='Email')
+					br
+					input#inputUserFullname(type='text', placeholder='Full Name')
+					input#inputUserAge(type='text', placeholder='Age')
+					br
+					input#inputUserLocation(type='text', placeholder='Location')
+					input#inputUserGender(type='text', placeholder='gender')
+					br
+					input#inputUserPassword(type='password', placeholder='Password')
+					br
+					button#btnAddUser Add User
+			// /ADD USER
+		br
+		strong <span id='note'></span>
+
+	a(href='/', class='text-center') Login Now!

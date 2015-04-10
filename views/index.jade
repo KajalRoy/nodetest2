@@ -1,0 +1,79 @@
+extends layout
+
+block content
+	h1= title
+	p Welcome to our database access page
+	a(href='/logout', class='text-center') Logout!
+	br
+	br
+	br
+	br
+
+	// WRAPPER
+	#wrapper
+
+		// USER INFO
+		#userInfo
+			h2 User Info
+			p
+				strong Name:
+				|  <span id='userInfoName'></span>
+				br
+				strong Age:
+				|  <span id='userInfoAge'></span>
+				br
+				strong Gender:
+				|  <span id='userInfoGender'></span>
+				br
+				strong Location:
+				|  <span id='userInfoLocation'></span>
+				br
+				br
+
+			// ADD MULTIPLE USERS
+			#addMultiUser
+				h2 Upload UserList?
+					form#fileUpload(method='POST' action='/users/upload' enctype='multipart/form-data')
+						//accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+						input#payload(type="file" name="myFile" accept=".csv") 
+						br 
+						button#upload Upload
+			// /ADD MULTIPLE USERS
+		// /USER INFO
+
+
+		// USER LIST
+		h2 User List
+		button#prev < prev
+		button#next next >
+		#userList
+			table
+				thead
+					th UserName
+					th Email
+					th Delete?
+				tbody
+		// /USER LIST
+
+
+		// ADD USER
+		h2 Add User
+		#addUser
+			fieldset
+				input#inputUserName(type='text', placeholder='Username')
+				input#inputUserEmail(type='text', placeholder='Email')
+				br
+				input#inputUserFullname(type='text', placeholder='Full Name')
+				input#inputUserAge(type='text', placeholder='Age')
+				br
+				input#inputUserLocation(type='text', placeholder='Location')
+				input#inputUserGender(type='text', placeholder='gender')
+				br
+				input#inputUserPassword(type='password', placeholder='Password')
+				br
+				button#btnAddUser Add User
+		// /ADD USER
+		br
+		strong <span id='note'></span>
+
+	// /WRAPPER
